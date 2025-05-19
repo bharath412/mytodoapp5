@@ -1,0 +1,42 @@
+# Common build directories
+/target/
+/build/
+/dist/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Compiled class file
+*.class
+
+# Node.js
+/node_modules/
+.angular/
+/npm-debug.log
+
+# Maven
+/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Logs
+*.log
+logs/
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# OS Files
+.DS_Store
+Thumbs.db
