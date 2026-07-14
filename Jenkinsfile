@@ -4,7 +4,7 @@ pipeline {
   environment {
     // Point this at wherever the Secure Build API is reachable from Jenkins.
     // localhost only works if Jenkins runs on the same host as the API.
-    SAST_API_URL    = 'http://localhost:8000'
+    SAST_API_URL    = 'http://host.docker.internal:8000'
     SAST_PROJECT_ID = '62d3c786-0c00-44cb-8c8b-f058e9733676'
   }
 
