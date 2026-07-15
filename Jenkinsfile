@@ -31,6 +31,7 @@ pipeline {
                 "project_id": "${env.SAST_PROJECT_ID}",
                 "commit_sha": "${commitSha}",
                 "branch": "${branch}",
+                "force": true",
                 "metadata": {
                   "jenkins_build": "${env.BUILD_URL}"
                 }
