@@ -37,6 +37,9 @@ pipeline {
 
             def triggerJson = readJSON text: triggerResponse.content
             def scanId = triggerJson.scan_id
+            if (!scanId) {
+              error("Failed to trigger scan: ${triggerResponse.content}")
+            }
             echo "Scan triggered: ${scanId} (status: ${triggerJson.status}, reused: ${triggerJson.reused})"
 
             def finalStatus = null
@@ -63,6 +66,9 @@ pipeline {
               }
             }
 
+            if (!(finalStatus in ['success', 'failed'])) {
+              error("Scan timed out after 30 minutes (last status: ${finalStatus})")
+            }
             if (finalStatus == 'failed') {
               error("Scan engine failed: ${finalMessage ?: 'unknown error'}")
             }
